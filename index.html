@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #d9d9d9;
+      background-color: #ffe6ff; /* Pastel purple */
       margin: 0;
       padding: 0;
     }
@@ -18,34 +18,74 @@
       background-color: #e6e6e6;
       border: 2px solid #999999;
       border-radius: 10px;
+      text-align: center;
     }
     h1 {
       color: #663399;
-      text-align: center;
     }
     p {
       color: #336699;
-      text-align: center;
     }
     .birthday-message {
-      text-align: center;
       font-size: 20px;
       margin-top: 30px;
       color: #ff66cc;
+    }
+    .like-button, .dislike-button {
+      background-color: #ffcc00;
+      color: #663399;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+    .like-button:hover, .dislike-button:hover {
+      background-color: #ff9900;
+    }
+    .liked, .disliked {
+      background-color: #33cc33;
     }
   </style>
 </head>
 <body>
 
 <div class="container">
-  <h1 style="color: #ff66cc;">Happy Birthday Brig!</h1>
-  <p style="color: #ffcc00;">LOVE HARD AND DIE CHANGING. Life presents many subjects for reflection.</p>
+  <h1>Happy Birthday Brig!</h1>
+  <p>LOVE HARD AND DIE CHANGING. Life presents many subjects for reflection.</p>
   <div class="birthday-message">
     <p>Today I've been thinking a lot about how athletes should wear your name on their jerseys instead of theirs, as a tribute. But only the winning team.</p>
     <p>Your birth ushered in a new millenium. B.C. stands for Briggy Century. TOTAL JUBILEE</p>
-    <p> </p>
+    <button class="like-button" onclick="likeButton()">Like</button>
+    <button class="dislike-button" onclick="dislikeButton()">Dislike</button>
   </div>
 </div>
+
+<script>
+  function likeButton() {
+    var button = document.querySelector('.like-button');
+    if (button.textContent === 'Like') {
+      button.textContent = 'Liked!';
+      button.classList.add('liked');
+    } else {
+      button.textContent = 'Like';
+      button.classList.remove('liked');
+    }
+  }
+
+  function dislikeButton() {
+    var button = document.querySelector('.dislike-button');
+    if (button.textContent === 'Dislike') {
+      button.textContent = 'Not possible :(';
+      button.classList.add('disliked');
+    } else {
+      button.textContent = 'Dislike';
+      button.classList.remove('disliked');
+    }
+  }
+</script>
 
 </body>
 </html>
