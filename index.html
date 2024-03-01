@@ -56,6 +56,11 @@
     .pomeranian-link:hover {
       color: #663399;
     }
+    .counter {
+      font-size: 16px;
+      color: #666666;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -67,32 +72,26 @@
     <p>Today I've been thinking a lot about how athletes should wear your name on their jerseys instead of theirs, as a tribute. But only the winning team.</p>
     <p>Your birth ushered in a new millenium. B.C. stands for Briggy Century. 100 years of TOTAL JUBILEE</p>
     <button class="like-button" onclick="likeButton()">Like</button>
+    <span id="like-counter" class="counter">1,000,000 Likes</span>
     <button class="dislike-button" onclick="dislikeButton()">Dislike</button>
-    <p>Want to see cute Pomeranian pictures? Check out <a href="https://www.google.com/search?q=pomeranians&tbm=isch" class="pomeranian-link" target="_blank">this Google image search</a>!</p>
+    <span id="dislike-counter" class="counter">0 Dislikes</span>
+    <p>Want to know more about Brigitte Bakker? Check out <a href="https://www.google.com/search?q=brigitte+bakker" class="pomeranian-link" target="_blank">this Google search</a>!</p>
   </div>
 </div>
 
 <script>
   function likeButton() {
-    var button = document.querySelector('.like-button');
-    if (button.textContent === 'Like') {
-      button.textContent = 'Liked!';
-      button.classList.add('liked');
-    } else {
-      button.textContent = 'Like';
-      button.classList.remove('liked');
-    }
+    var likeCounter = document.getElementById('like-counter');
+    var dislikeCounter = document.getElementById('dislike-counter');
+    likeCounter.textContent = "1,000,001 Likes";
+    dislikeCounter.textContent = "0 Dislikes";
   }
 
   function dislikeButton() {
-    var button = document.querySelector('.dislike-button');
-    if (button.textContent === 'Dislike') {
-      button.textContent = 'Not possible :(';
-      button.classList.add('disliked');
-    } else {
-      button.textContent = 'Dislike';
-      button.classList.remove('disliked');
-    }
+    var likeCounter = document.getElementById('like-counter');
+    var dislikeCounter = document.getElementById('dislike-counter');
+    likeCounter.textContent = "1,000,000 Likes";
+    dislikeCounter.textContent = "1 Dislike";
   }
 </script>
 
